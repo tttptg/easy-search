@@ -2,6 +2,7 @@
     width: 100%;
     height: 20px;
     display: flex;
+    margin: 3px 0;
     align-items: center; /* 垂直居中 */
 }
 

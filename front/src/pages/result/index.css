@@ -1,0 +1,33 @@
+#path {
+    width: 1480px;
+    display: flex;
+    align-items: center;
+}
+
+.rollback {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+}
+
+.result {
+    width: 97%;
+    height: 600px;
+    overflow-y: auto; 
+    word-wrap: break-word;
+    padding: 5px 10px;
+    margin: 0 auto;
+    border: 2px solid black;
+}
+
+#download-bar {
+    margin: 10px 12px;
+}
+
+.downloads-button {
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+}

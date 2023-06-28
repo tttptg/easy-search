@@ -18,6 +18,7 @@ export default class PathShow extends Component {
                         {index < data.length - 1 && <span className="separator">&gt;</span>}
                     </React.Fragment>
                 ))}
+                <img src='./images/down.png' alt='1' className='down'/>
             </div>
         );
     }

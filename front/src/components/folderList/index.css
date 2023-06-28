@@ -1,0 +1,9 @@
+.list {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px 2px;
+    width: 100%;
+    border: 1.5px solid #ccc;
+    overflow: auto; 
+    columns: 2; /* 设置列数 */
+}

@@ -1,0 +1,29 @@
+.bar {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    position: relative;
+    width: 100%;
+}
+
+.span {
+    font-size: 14px;
+}
+
+.input-bar {
+    height: 20px;
+    width: 1250px;
+    letter-spacing: 0.8px;
+}
+
+.botton {
+    width: 100px;
+    height: 30px;
+    background: rgb(248, 41, 41);
+    border: 0px;
+    border-radius: 10px;
+    color: white;
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+}

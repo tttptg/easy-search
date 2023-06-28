@@ -1,19 +1,20 @@
 import './App.css';
-import ChooseFloder from './pages/chooseFloder';
-// import Result from './pages/result';
+// import ChooseFloder from './pages/chooseFloder';
+import Result from './pages/result';
 // import Floder from './components/floder';
-import FloderList from './components/folderList';
-import Path from './components/path';
-import PathShow from './components/pathShow';
+// import FloderList from './components/folderList';
+// import Path from './components/path';
+// import PathShow from './components/pathShow';
 
 function App() {
   return (
-    <div>
-      <ChooseFloder/>
+    <div className='app'>
+      {/* <ChooseFloder/> */}
       {/* <Path pathName="PC"/> */}
-      <PathShow/>
+      {/* <PathShow/> */}
       {/* <Floder floderName="Downloads"/> */}
-      <FloderList/>
+      {/* <FloderList/> */}
+      <Result/>
     </div>
   );
 }
