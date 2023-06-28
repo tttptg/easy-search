@@ -2,89 +2,37 @@ import React, {Component} from "react";
 import "./index.css"
 import File from "../file";
 import Floder from "../floder";
+import axios from "axios";
+import ajax from "../../api/ajax";
 
 export default class FloderList extends Component {
 
-    render() {
+    state = {
+        data:[]
+    }
 
-        const data = [
-            {filename:"Downloads",type:1},
-            {filename:"documents.txt",type:0},
-            {filename:"Downloads",type:1},
-            {filename:"documents.txt",type:0},
-            {filename:"Downloads",type:1},
-            {filename:"documents.txt",type:0},
-            {filename:"Downloads",type:1},
-            {filename:"documents.txt",type:0},
-            {filename:"Downloads",type:1},
-            {filename:"documents.txt",type:0},
-            {filename:"Downloads",type:1},
-            {filename:"documents.txt",type:0},
-            {filename:"Downloads",type:1},
-            {filename:"documents.txt",type:0},
-            {filename:"Downloads",type:1},
-            {filename:"documents.txt",type:0},
-            {filename:"Downloads",type:1},
-            {filename:"documents.txt",type:0},
-            {filename:"Downloads",type:1},
-            {filename:"documents.txt",type:0},
-            {filename:"Downloads",type:1},
-            {filename:"documents.txt",type:0},
-            {filename:"Downloads",type:1},
-            {filename:"documents.txt",type:0},
-            {filename:"Downloads",type:1},
-            {filename:"documents.txt",type:0},
-            {filename:"Downloads",type:1},
-            {filename:"documents.txt",type:0},
-            {filename:"Downloads",type:1},
-            {filename:"documents.txt",type:0},
-            {filename:"Downloads",type:1},
-            {filename:"documents.txt",type:0},
-            {filename:"Downloads",type:1},
-            {filename:"documents.txt",type:0},
-            {filename:"Downloads",type:1},
-            {filename:"documents.txt",type:0},
-            {filename:"Downloads",type:1},
-            {filename:"documents.txt",type:0},
-            {filename:"Downloads",type:1},
-            {filename:"documents.txt",type:0},
-            {filename:"Downloads",type:1},
-            {filename:"documents.txt",type:0},
-            {filename:"Downloads",type:1},
-            {filename:"documents.txt",type:0},
-            {filename:"Downloads",type:1},
-            {filename:"documents.txt",type:0},
-            {filename:"documents.txt",type:0},
-            {filename:"documents.txt",type:0},
-            {filename:"documents.txt",type:0},
-            {filename:"documents.txt",type:0},
-            {filename:"documents.txt",type:0},
-            {filename:"documents.txt",type:0},
-            {filename:"documents.txt",type:0},
-            {filename:"documents.txt",type:0},
-            {filename:"documents.txt",type:0},
-            {filename:"documents.txt",type:0},
-            {filename:"documents.txt",type:0},
-            {filename:"documents.txt",type:0},
-            {filename:"documents.txt",type:0},
-            {filename:"documents.txt",type:0},
-            {filename:"documents.txt",type:0},
-            {filename:"documents.txt",type:0},
-            {filename:"documents.txt",type:0},
-            {filename:"documents.txt",type:0},
-            {filename:"documents.txt",type:0},
-            {filename:"documents.txt",type:0},
-            {filename:"documents.txt",type:0},
-        ];
+    getSubDir = async (targetName) => {
+        const data = await ajax("http://localhost:8080/path/subdirectory",{targetPath:targetName})
+        this.setState({ data: data.data });
+    }
+
+    componentDidMount(){
+        const {nowPath} = this.props;
+        this.getSubDir(nowPath);
+    }
+
+    render() {
+        const {handleNowPath} = this.props;
+        const {data} = this.state;
 
 
         return (
             <div className="list">
                 {data.map(item => {
-                    if (item.type === 0) {
-                        return <File key={item.filename} fileName={item.filename} />;
-                    } else if (item.type === 1) {
-                        return <Floder key={item.filename} floderName={item.filename} />;
+                    if (item.type === false) {
+                        return <File key={item.path} fileName={item.path} />;
+                    } else if (item.type === true) {
+                        return <Floder key={item.path} floderName={item.path} />;
                     }
                     return null;
                 })}

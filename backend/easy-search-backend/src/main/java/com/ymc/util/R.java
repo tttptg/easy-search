@@ -1,5 +1,8 @@
 package com.ymc.util;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@JsonSerialize
 public class R {
     private int status;
     private String msg;
@@ -12,6 +15,31 @@ public class R {
     }
 
     // Getter and Setter methods...
+
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
+    }
 
     // 添加静态网络状态返回码
     public static R success(Object data) {

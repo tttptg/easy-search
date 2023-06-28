@@ -5,9 +5,21 @@ import FloderList from '../../components/folderList';
 import SelectRoot from '../../components/selectRoot';
 
 export default class ChooseFloder extends Component {
+    state = {
+        nowPath:"root"
+    };
+
+    handleNowPath = (newPath)=>{
+        this.setState({
+            nowPath:newPath
+        })
+    }
+
     render() {
+        const {nowPath} = this.state;
+
         return (
-            <div>
+            <div className='contains'>
                 <div className='top-bar'>
                     <img src='/images/easy-search-logo.png' className='logo' alt='1'/>
                 </div>
@@ -16,7 +28,7 @@ export default class ChooseFloder extends Component {
                     <PathShow/>
                 </div>
                 <div className='center' >
-                    <FloderList/>
+                    <FloderList nowPath={nowPath}/>
                 </div>
                 <div className='bottom'>
                     <SelectRoot/>
