@@ -1,13 +1,19 @@
 import './App.css';
 import ChooseFloder from './pages/chooseFloder';
-import Result from './pages/result';
-import File from './components/file';
+// import Result from './pages/result';
+// import Floder from './components/floder';
+import FloderList from './components/folderList';
+import Path from './components/path';
+import PathShow from './components/pathShow';
 
 function App() {
   return (
     <div>
       <ChooseFloder/>
-      <File fileName="document.txt"/>
+      {/* <Path pathName="PC"/> */}
+      <PathShow/>
+      {/* <Floder floderName="Downloads"/> */}
+      <FloderList/>
     </div>
   );
 }

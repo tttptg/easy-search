@@ -1,0 +1,12 @@
+.path-container {
+    display: flex;
+    margin: 10px 10px;
+    align-items: center;
+    border: 1px solid #ccc;
+    height: 30px;
+  }
+  
+  .separator {
+    margin: 0 2px;
+  }
+  

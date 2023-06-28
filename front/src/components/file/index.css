@@ -1,0 +1,13 @@
+.file {
+    width: 100%;
+    height: 20px;
+    display: flex;
+    align-items: center; /* 垂直居中 */
+}
+
+.image {
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
+    margin-right: 10px;
+}

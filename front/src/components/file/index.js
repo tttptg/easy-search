@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./index.css";
 
 export default class File extends Component {
     render(){
@@ -6,7 +7,7 @@ export default class File extends Component {
 
         return (
             <div className="file">
-                <img src='/file-word.png' alt='1'/>
+                <img className='image' src='/images/file-word.png' alt='1'/>
                 <span>{fileName}</span>
             </div>
         );
