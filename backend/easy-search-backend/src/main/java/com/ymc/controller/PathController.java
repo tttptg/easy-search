@@ -2,6 +2,7 @@ package com.ymc.controller;
 
 import com.ymc.pojo.Path;
 import com.ymc.service.PathService;
+import com.ymc.util.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,7 +22,8 @@ public class PathController {
     private PathService pathService;
 
     @GetMapping("/subdirectory")
-    public List<Path> subdirectory(@PathVariable String targetPath){
+    public R subdirectory(String targetPath){
+        System.out.println(targetPath);
         File directory = new File(targetPath);
         List<Path> paths = null;
         if (directory.isDirectory()) {
@@ -31,7 +33,7 @@ public class PathController {
                 return new Path(item.getName(),isDir);
             }).collect(Collectors.toList());
         }
-        return paths;
+        return R.success(paths);
     }
 
 }

@@ -2,7 +2,7 @@ package com.ymc.pojo;
 
 public class Path {
     private String path;
-    private int type;
+    private boolean type;
 
     public Path(String path, boolean type) {
         this.path = path;
@@ -20,11 +20,11 @@ public class Path {
         this.path = path;
     }
 
-    public int getType() {
+    public boolean getType() {
         return type;
     }
 
-    public void setType(int type) {
+    public void setType(boolean type) {
         this.type = type;
     }
 }
