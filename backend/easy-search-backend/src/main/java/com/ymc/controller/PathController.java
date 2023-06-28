@@ -4,6 +4,7 @@ import com.ymc.pojo.Path;
 import com.ymc.service.PathService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,7 +21,7 @@ public class PathController {
     private PathService pathService;
 
     @GetMapping("/subdirectory")
-    public List<Path> subdirectory(String targetPath){
+    public List<Path> subdirectory(@PathVariable String targetPath){
         File directory = new File(targetPath);
         List<Path> paths = null;
         if (directory.isDirectory()) {

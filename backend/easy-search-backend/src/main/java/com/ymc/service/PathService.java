@@ -6,5 +6,5 @@ import java.util.List;
 import java.awt.*;
 
 public interface PathService {
-    public List<Path> subdirectory();
+    public List<Path> subdirectory(String targetPath);
 }
