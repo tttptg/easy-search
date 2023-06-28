@@ -4,7 +4,7 @@ public class Path {
     private String path;
     private int type;
 
-    public Path(String path, int type) {
+    public Path(String path, boolean type) {
         this.path = path;
         this.type = type;
     }
