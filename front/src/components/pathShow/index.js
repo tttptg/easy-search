@@ -8,7 +8,15 @@ export default class PathShow extends Component {
     };
 
     render() {
-        const { data } = this.state;
+        const { nowPath } = this.props;
+        let data = ["此电脑"];
+        if(nowPath === "root"){
+            data = ["此电脑"]
+        }else{
+            data = [...data,...nowPath.split('/')];
+        }
+        
+        // console.log(data)
 
         return (
             <div className="path-container">
