@@ -35,3 +35,7 @@
 strong {
     color: rgb(223, 126, 126);
 }
+
+.one-item {
+    margin: 20px 0;
+}
