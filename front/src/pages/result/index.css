@@ -31,3 +31,7 @@
     right: 0;
     margin-right: 20px;
 }
+
+strong {
+    color: rgb(223, 126, 126);
+}
