@@ -7,7 +7,7 @@ export default class Search extends Component {
             <div id="search-bar">
                 <img src="./images/easy-search-logo.png" alt="1" className="small-logo"/>
                 <input className='input-bar' type="text" placeholder="搜索框"/>
-                <button className='botton'>开始检索</button>
+                <button className='botton-search'>开始检索</button>
             </div>
         );
     }

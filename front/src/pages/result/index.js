@@ -4,14 +4,20 @@ import PathShow from "../../components/pathShow";
 import './index.css';
 
 export default class Result extends Component {
+    state = {
+        nowPath:"root"
+    }
+
     render(){
+        const {chooseRoot} = this.props;
+        console.log(chooseRoot);
         return (
             <div id="result-bar">
                 <div id="top-bar">
                     <Search/>
                 </div>
                 <div id="path">
-                    <PathShow/>
+                    <PathShow nowPath={chooseRoot}/>
                     <img src="/images/rollback.png" alt="1"  className="rollback"/>
                 </div>
                 <div id="center-bar">

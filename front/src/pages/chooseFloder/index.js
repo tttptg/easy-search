@@ -54,7 +54,7 @@ export default class ChooseFloder extends Component {
                     <FloderList nowPath={nowPath} handleNowPath={this.handleNowPath.bind(this)}/>
                 </div>
                 <div className='bottom'>
-                    <SelectRoot nowPath={nowPath}/>
+                    <SelectRoot nowPath={nowPath} handleChooseRoot={this.props.handleChooseRoot}/>
                 </div>
             </div>
         )

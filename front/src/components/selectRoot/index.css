@@ -5,11 +5,11 @@
     width: 100%;
 }
 
-.span {
+.span-text {
     font-size: 14px;
 }
 
-.input-bar {
+.input {
     height: 20px;
     width: 1250px;
     letter-spacing: 0.8px;
