@@ -2,10 +2,15 @@ import React, {Component} from "react";
 import Search from "../../components/search";
 import PathShow from "../../components/pathShow";
 import './index.css';
+import { withRouter } from "react-router-dom/cjs/react-router-dom";
 
-export default class Result extends Component {
+class Result extends Component {
     state = {
         nowPath:"root"
+    }
+
+    backToSelect = ()=>{
+        this.props.history.goBack();
     }
 
     render(){
@@ -18,7 +23,7 @@ export default class Result extends Component {
                 </div>
                 <div id="path">
                     <PathShow nowPath={chooseRoot}/>
-                    <img src="/images/rollback.png" alt="1"  className="rollback"/>
+                    <img src="/images/rollback.png" alt="1"  className="rollback" onClick={this.backToSelect}/>
                 </div>
                 <div id="center-bar">
                     <div id="download-bar">
@@ -46,3 +51,5 @@ dsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
         )
     }
 }
+
+export default withRouter(Result);
